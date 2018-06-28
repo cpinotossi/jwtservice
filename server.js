@@ -20,10 +20,9 @@
 
   //instantiate an express object
   const app = express();
-  const port = 80;
-  //Sample URL: http://127.0.0.1/jwt/generate/iec?hd=akamai.com&email=cpinotos@akamai.com&jwtkeyname=edgegate_iec_jwt&cookiename=jwt.iec&hostname=hebe.io
+  //Sample URL: http://127.0.0.1/demo/iec/jwt/generate/iec?hd=akamai.com&email=cpinotos@akamai.com&jwtkeyname=edgegate_iec_jwt&cookiename=jwt.iec&hostname=hebe.io
 
-  app.get('/jwt/generate/iec', (req, res) => {
+  app.get('/demo/iec/jwt/generate/iec', (req, res) => {
     joi.validate({ hd: req.query.hd,
       eMail: req.query.email,
       jwtKeyName: req.query.jwtkeyname,
@@ -74,4 +73,5 @@
   var server = http.createServer(app);
 
   //Start Server
+  var port = process.env.PORT || 80;
   server.listen(port);
