@@ -52,8 +52,7 @@
           console.log(`jwt = ${jwt}`);
 
           //send JWT in response
-          res.status(200);
-          res.type('application/json');
+          res.redirect(302, "/index.html");
           res.cookie(value.cookieName, jwt,{ domain: value.hostname, path: '/' })
           var result = {
             "jwt": jwt,
