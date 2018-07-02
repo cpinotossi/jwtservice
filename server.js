@@ -20,7 +20,7 @@
 
   //instantiate an express object
   const app = express();
-  //Sample URL: http://127.0.0.1/demo/iec/jwt/generate/iec?hd=akamai.com&email=cpinotos@akamai.com&jwtkeyname=edgegate_iec_jwt&cookiename=jwt.iec&hostname=hebe.io
+  //Sample URL: http://127.0.0.1/demo/iec/jwt/generate/iec?hd=akamai.com&email=cpinotos@akamai.com&jwtkeyname=edgegate_iec_jwt&cookiename=jwtiec&hostname=hebe.io
 
   app.get('/demo/iec/jwt/generate/iec', (req, res) => {
     joi.validate({ hd: req.query.hd,
