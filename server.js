@@ -55,11 +55,11 @@
           //send JWT in response
           res.status(200);
           res.type('application/json');
-          res.cookie(value.cookieName, jwt,{ domain: value.hostname, path: '/' })
+          res.cookie(value.cookieName, jwt,{ domain: '.'+value.hostname, path: '/' })
           var result = {
             "jwt": jwt,
             "jwtkeyname": value.jwtKeyName,
-            "cookiename": '.'+value.cookieName,
+            "cookiename": value.cookieName,
             "hostname": value.hostname
           }
           res.send(result);
