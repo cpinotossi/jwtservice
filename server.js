@@ -59,7 +59,7 @@
           var result = {
             "jwt": jwt,
             "jwtkeyname": value.jwtKeyName,
-            "cookiename": value.cookieName,
+            "cookiename": '.'+value.cookieName,
             "hostname": value.hostname
           }
           res.send(result);
@@ -96,7 +96,7 @@ http://127.0.0.1/demo/iec/jwt/validate?hd=akamai.com&jwtkeyname=edgegate_iec_jwt
             //send JWT in response
             res.status(200);
           }else{
-            res.status(301);
+            res.status(302);
           }
           res.type('application/json');
           res.send();
@@ -104,8 +104,6 @@ http://127.0.0.1/demo/iec/jwt/validate?hd=akamai.com&jwtkeyname=edgegate_iec_jwt
       });
   })
 
-
-  app.use(express.static(__dirname + '/public'));
   var http = require("http");
   var server = http.createServer(app);
 
